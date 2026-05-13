@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-bg: #0F172A;
+  --brand-primary: #64748B;
+  --brand-secondary: #F4F4F4;
+  --brand-accent: #22D3EE;
+
+  color-scheme: dark;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--brand-bg);
+  color: var(--brand-primary);
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--brand-bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--brand-bg);
+  color: var(--brand-primary);
+  font-family: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: rgba(34, 211, 238, 0.24);
+  color: var(--brand-secondary);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.05), transparent 25%), 
+    radial-gradient(circle at bottom right, rgba(244, 244, 244, 0.03), transparent 20%), 
+    linear-gradient(180deg, var(--brand-bg) 0%, #0c1222 100%);
+  opacity: 1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  color: var(--brand-secondary);
+}
+
+section {
+  position: relative;
+}
+
+button,
+a,
+input,
+textarea {
+  font: inherit;
+}
+
+::placeholder {
+  color: rgba(148, 163, 184, 0.75);
+}
+
+.badge-secondary {
+  display: inline-flex;
+  padding: 0.65rem 1rem;
+  border-radius: 9999px;
+  background: rgba(244, 244, 244, 0.05);
+  color: var(--brand-primary);
+  font-size: 0.85rem;
+  border: 1px solid rgba(244, 244, 244, 0.08);
+}
+
+.card-glass {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.16), 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
